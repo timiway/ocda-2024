@@ -1,5 +1,5 @@
 
-html, body { height: 100%; background: url("../img/001.png") no-repeat center center; background-size: cover; }
+html, body { height: 100%; background: url("../img/001.jpg") no-repeat center center; background-size: cover; }
 
 .app-body { height: 800px; width: 390px; overflow: hidden; position: relative; }
 .m-btn { position: absolute; right: 10px; top: 10px; width: 20px; height: 20px; border: 2px solid white; border-radius: 50%;}
@@ -13,6 +13,7 @@ html, body { height: 100%; background: url("../img/001.png") no-repeat center ce
 .breathe { animation: key-loop2 3s ease infinite; }
 .intro { animation: key-fill 800ms ease both; }
 .intro2 { animation: key-grow 800ms ease both; }
+.intro3 { animation: key-drop 800ms ease both; }
 .swing { animation: key-swing 5s none infinite; transform-origin: 50% 0; }
 
 @keyframes key-btn {
@@ -28,7 +29,7 @@ html, body { height: 100%; background: url("../img/001.png") no-repeat center ce
     50% { transform: translateY(-10px); }
 }
 @keyframes key-drop {
-    0% { transform: translateY(-100px); opacity: 0 }
+    0% { transform: translateY(-50px); opacity: 0 }
     50% { transform: translateY(10px); }
 }
 @keyframes key-swing {

@@ -15,15 +15,16 @@
 <body>
 <div class="app-body">
     <div id="musicSwitch" class="m-btn"></div>
-    <div class="ele intro" style="width: 240px; left: 20px; top: 0;"><img src="img/006.png"/></div>
-    <div class="ele swing" style="width: 200px; left: 100px; top: 540px;"><img src="img/002.png"/></div>
-    <div class="ele intro" style="width: 410px; left: -40px; top: 270px;"><img src="img/004.png"/></div>
+    <div class="ele intro3" style="width: 410px; left: -44px; top: 270px;"><img src="img/004.png"/></div>
+    <div class="ele intro2" style="width: 410px; left: -44px; top: 265px;"><img src="img/010.png"/></div>
     <div class="ele intro2" style="width: 120px; left: -10px; top: 520px;"><img src="img/007.png"/></div>
     <div class="ele intro2" style="width: 230px; right: -100px; top: 530px;"><img src="img/005.png"/></div>
     <div class="ele breathe" style="width: 450px; left: -20px; top: 50px;"><img src="img/003.png"/></div>
     <div class="ele loop" style="width: 30px; left: 40px; top: 430px;"><img src="img/008.png"/></div>
     <div class="ele loop" style="width: 25px; left: 80px; top: 420px;"><img src="img/009.png"/></div>
     <div class="ele loop" style="width: 40px; left: 180px; top: 370px;"><img src="img/008.png"/></div>
+    <div class="ele swing" style="width: 200px; left: 100px; top: 540px;"><img src="img/002.png"/></div>
+    <div class="ele intro" style="width: 240px; left: 20px; top: 10px;"><img src="img/006.png"/></div>
 </div>
 <audio id="m" autoplay="autoplay" loop="loop" src="bg1.mp3"></audio>
 
@@ -40,6 +41,9 @@
             $(this).css('animation-delay', i * 200 + 'ms')
         });
         $(".intro2").each(function (i) {
+            $(this).css('animation-delay', (i * 100 + 1000) + 'ms')
+        });
+        $(".intro3").each(function (i) {
             $(this).css('animation-delay', (i * 100 + 500) + 'ms')
         });
         $(".loop").each(function () {
