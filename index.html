@@ -1,0 +1,70 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>北京奥运城市发展促进会 - 2024新年贺卡</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0, maximum-scale=1, minimum-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="libs/modernizr-2.8.3.min.js"></script>
+    <script src="libs/jquery-1.12.0.min.js"></script>
+</head>
+<body>
+<div class="app-body">
+    <div id="musicSwitch" class="m-btn"></div>
+    <div class="ele intro" style="width: 240px; left: 20px; top: 0;"><img src="img/006.png"/></div>
+    <div class="ele swing" style="width: 200px; left: 100px; top: 540px;"><img src="img/002.png"/></div>
+    <div class="ele intro" style="width: 410px; left: -40px; top: 270px;"><img src="img/004.png"/></div>
+    <div class="ele intro2" style="width: 120px; left: -10px; top: 520px;"><img src="img/007.png"/></div>
+    <div class="ele intro2" style="width: 230px; right: -100px; top: 530px;"><img src="img/005.png"/></div>
+    <div class="ele breathe" style="width: 450px; left: -20px; top: 50px;"><img src="img/003.png"/></div>
+    <div class="ele loop" style="width: 30px; left: 40px; top: 430px;"><img src="img/008.png"/></div>
+    <div class="ele loop" style="width: 25px; left: 80px; top: 420px;"><img src="img/009.png"/></div>
+    <div class="ele loop" style="width: 40px; left: 180px; top: 370px;"><img src="img/008.png"/></div>
+</div>
+<audio id="m" autoplay="autoplay" loop="loop" src="bg1.mp3"></audio>
+
+<script>
+    //
+    var media = document.getElementById("m");
+    document.addEventListener('WeixinJSBridgeReady', function () {
+        media.play()
+    });
+    //
+    $(function () {
+        //
+        $(".intro").each(function (i) {
+            $(this).css('animation-delay', i * 200 + 'ms')
+        });
+        $(".intro2").each(function (i) {
+            $(this).css('animation-delay', (i * 100 + 500) + 'ms')
+        });
+        $(".loop").each(function () {
+            $(this).css('animation-delay', Math.round(Math.random() * 5000) + 'ms')
+        });
+        // //
+        $("#musicSwitch").click(function () {
+            $(this).toggleClass("m-motion");
+            if (media.paused) media.play();
+            else media.pause();
+        });
+        //
+        $(window).resize(function () {
+            var ww = $(this).width(), wh = $(this).height();
+            var pw = $('.app-body').width(), ph = $('.app-body').height();
+            var flip = wh < ww && false;
+            var deg = flip ? '90deg' : '0';
+            var ratio = flip ? Math.min(ww / ph, wh / pw) : Math.min(ww / pw, wh / ph);
+            $('.app-body').css({
+                top: Math.round((wh - ph) / 2),
+                left: Math.round((ww - pw) / 2),
+                transform: 'rotate(' + deg + ') scale(' + ratio + ')'
+            });
+        }).resize();
+    });
+</script>
+</body>
+</html>
